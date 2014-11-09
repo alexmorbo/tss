@@ -42,10 +42,15 @@ class Updater
             $output .= '<item>';
             $output .= '<title>' . htmlspecialchars($item['title']) .
                 '</title>';
+
             $output .= '<link>' . $item['downloadUrl'] . '</link>';
             $output .= '<pubDate>' . $dt->format('r') . '</pubDate>';
-            $output .= '<description>' . $item['description'] .
+
+            $output .= '<description>' .
+                htmlspecialchars($item['title']) . PHP_EOL .
+                htmlspecialchars($item['description']) .
                 '</description>';
+
             $output .= '<author>' . $item['author'] . '</author>';
             $output .= '</item>';
         }
