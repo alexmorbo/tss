@@ -36,7 +36,7 @@ class Updater
         $output .= '<ttl>15</ttl>';
         $output .= '<description>Fucking awesome</description>';
 
-        foreach ($this->_rssData as $item) {
+        foreach ($rssData as $item) {
             /** @var DateTime $dt */
             $dt = $item['updated'];
             $output .= '<item>';
@@ -65,7 +65,7 @@ class Updater
     protected $_rssData = [];
 
     protected function _addToRss(
-        $torrentUrl, $downloadUrl, $description, $title, $author,
+        $torrentUrl, $downloadUrl, $title, $description, $author,
         \DateTime $updateDateTime
     )
     {
